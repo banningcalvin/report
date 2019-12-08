@@ -1,0 +1,23 @@
+% This file (seniorthesis-main.tex) is the main file for a senior thesis.
+\documentclass [seniorthesis] {udthesis}
+% preamble
+
+% Include graphicx package for the example image used
+% Use LaTeX->PDF if including graphics such as .jpg, .png or .pdf.
+% Use LaTeX->PS->PDF if including graphics such as .ps or .eps
+% Best practice to not specify the file extension for included images,
+% so when LaTeX is building it will look for the appropriate image type.
+\usepackage{graphicx}
+          
+\begin{document}
+
+\include{seniorthesis-tap}
+                   % This file (seniorthesis-tap.tex) contains the Title
+                   % and Approval Page information for a senior thesis.
+                  
+\include{chap1}    % This file (chap1.tex) contains the text
+                   % for Chapter 1.
+                   
+\include{chap2}    % This file (chap2.tex) contains the text
+                   % for Chapter 2.
+\end{document}
