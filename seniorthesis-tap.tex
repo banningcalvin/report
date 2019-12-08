@@ -1,0 +1,49 @@
+% 
+% This is the Title and Approval Page file (seniorthesis-tap.tex) for
+% a senior thesis.
+%
+% The order of the commands below is very important.
+% You may choose to add or eliminate a \prefacesection 
+% in the front material but the order should remain 
+% the same especially \maketocloflot followed by 
+% \prefacesectiontoc{Abstract}
+
+% Title Page parameters
+%
+% Title and author are also used for PDF file properties
+% No special character or commands can be used for the PDF definition; 
+% use the [options] paramater to specify a different title or author 
+% to remove special characters or commands like \\ for example.
+\title[First Line of Title Second Line of Title]{CISC472 Pentesting Report\\
+}
+\author{Calvin Banning}
+% Bachelor of Arts, Bachelor of Science or Bachelor of [majorfield] Engineering
+% (i.e. Bachelor of Electrical Engineering)
+\degree{Bachelor of Science}
+% Required to specify majorfield for Bachelor of Arts or Science
+% Comment out if Engineering
+\majorfieldtrue\majorfield{Computer Science}
+\degreedate{2020}
+% Optional PDF properties
+\subject{CISC472}
+
+\maketitlepage  % Generates Title Page
+
+\begin{front} % Starts front material (Roman style page numbers)
+
+    % Table of Contents is always created, but you
+% may set \tablespagefalse and \figurespagefalse 
+% if you don't want these generated automatically
+% (i.e. List of Tables and List of Figures).
+% These are set to true by default (i.e. \tablespagetrue,
+% \figurespagetrue).
+
+% Uncomment if you do not want a List of Figures.
+\figurespagefalse
+
+% Uncomment if you do not want a List of Tables.
+\tablespagefalse 
+
+\maketocloflot
+
+\end{front} % Ends front material
