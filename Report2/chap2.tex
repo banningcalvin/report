@@ -2,38 +2,41 @@
 % This is Chapter 1 file (chap1.tex)
 %
 \chapter{UX Quality Assurance}
-A design evaluation for the final project of CISC472, evaluating the groupproject of Cong Meng and Owen Li. Hosted versions of the project can be foundat diy-reddit-257012.web.app and at https://github.com/udcymen/diy-reddit.
+A self-critique of the UX for the final project of CISC472. Hosted versions of the project can be found at:
 
+https://banningcalvin-redchan.glitch.me/
+
+and at :
+
+https://github.com/banningcalvin/redchan/.
+
+It is important to note that because I created this, some level of bias may be present in that I knew my own design goals and built the design in a way that I was satisfied with. I am not entirely sure how others will interpret the layout or color scheme.
 \section{Overview}
 
-Below is a screenshot of the home page. Ignoring post content, which is understandably meaningless because of numerous test posts, we can still see several flaws.
-\\\\
-\includegraphics[width = 400pt]{images/home.png}
-\begin{itemize}
-    \item There is an incredible volume of useless or confusing information. Timestamps are given in nanoseconds and seconds, but not as dates or another, more easily consumable format.
-    \item Posts are not ordered correctly by genre or other filters. Furthermore, the 'subreddit' chooser does nothing. The dropdown isn't the most user-friendly choice, and any tab shows the exact same posts, and fails to show more than about 10. After this, no new posts can be seen. Even posts with negative votes appear above many of those with positive counts.
-    \item When creating a new post, you are given a rather well designed popup that alerts you of the post ID (a link or simple alert without a long id string might have been better). However, as previously mentioned, there is no way to see this post. Additionally, navigating to the Account page does not correctly list posts.
-    \item Navigating between pages feels jittery. Rather than waiting to render the page until a response has been received, the page renders, and then it is populated after post data is received from the backend.
-    \item There is little consistency in design. Default fonts are used sporadically, with confusing mixes of serif and sans-serif. The logo and background contain characters from The Simpsons.
-    \item The Account Page has some useless buttons (see below), While the buttons are well styled, they are inconsistent (see the plaintext home link and the well-styled Sign Out Button).
-\end{itemize}
-\includegraphics[width = 400pt]{images/account.png}
-\begin{itemize}
-    \item The forgot password button does not work.
-    \item The individual post view is much better, as it shows comment dates. However, it still displays poster IDs, which is also a pontential security concern. Additionally, the content is prefixed by the words 'Content' in the exact same font as the content, which is unneccesary and confusing.
-    \item I found some elements to be too large. Even though my laptop screen is 1376*768px, it still felt like I was browsing on a mobile phone.
-    \item The mobile version of the site is not functional. Buttons are hidden and the site is not entirely responsive.
-\end{itemize}
 
-Put simply, this project feels unfinished. understandably, it will not be fully featured, but it should be expected that features present should be fully fleshed out.
+On the following pages is a series of screenshots for reference. In order, they are the homepage, the /a/ board, the /t/ board, and the account page.
+\\\\
+\includegraphics[width = 200pt]{images/home.png}
+\includegraphics[width = 200pt]{images/aboard.png}
+\\\\
+\includegraphics[width = 200pt]{images/tboard.png}
+\includegraphics[width = 200pt]{images/account.png}
+\\\\
 
 \section{Evaluation}
+The website clearly follows in the design of discussion boards less reputable than Reddit such as 4chan and 2chan. The site is not modern and does not follow modern design styles (as intended), but it does not fail to deliver an enjoyable and intuitive user experience.
 
-The website as it stands is still fairly simple, but it is almost functional enough for a production environment from a UX perspective. The single largest shortcoming is the inability to see new posts. After than, it is the useless functionality of the subreddit selector. Fixing these elements would effectively make the product MVP-ready.
+The homepage delivers basic information: it offers links to the various boards, a link to the account page, and a message from the site owner. Having a dedicated homepage is justified to act as a sort of directory and noticeboard for the site, and helps give the site some character. Because the user experience is primarily derived from discussion, rather than from consumption, I felt that this character was refreshing.
+
+The boards are straightforward in their purpose and navigation. The styling doesn't seem quite as perfected and uniform as the sites it's modelled after, but it seems to do 'enough'.
+
+The login page isn't as clean as the rest of the site. The logout button is always shown, even when the user is logged out, and the login button is awkwardly situated in the middle of the screen.
+\\\\
+Other than that, the only other content on the site is posts. The /a/ board is disabled, but it has a notice which is professionally attached.
 
 \section{Suggestions}
-Spending an hour cleaning up vestigal controls, make all styling uniform, and fixing spacing, sizing, and overflow rules would solve 50\% of issues. Additionally, the issues with timestamps being displayed in nanoseconds should be a simple fix, considering it was done correctly in other areas of the site. Removing IDs and replacing them with a username would also be a good idea.
+Not all users will share the admiration for this design style. In the same way that Reddit offers old.reddit.com, it might be useful to move this domain to old.redchan.com, and create a new frontend hosted at a different subdomain, which follows modern design fads. It should be understandable that this is out of scope for this project, as other tasks hold higher priority.
 
-The remainder of shortcomings result from unexpected behavior. Adding tags to posts that allow the subreddit selector to correctly filter would add tremendous amount of depth to the user experience. Fixing the inability to see new posts, and incorrect sorting of posts based on votes would also fix most of the user experience.
+It would be wise to tweak the login and logout links to match the style of other buttons and links on the site. Additionally, the logout button should be displayed conditionally depending on the auth state.
 
-Finally, adding more to the site in general would be useful: Descriptions, a solid background (the current background is distracting), and sidebars, would drive  user interaction and reduce the feeling of an 'empty' application.
+On a final pass of the site, I discovered that upvotes were not working as expected. An investigation and patch is pending at the time of this writing.
